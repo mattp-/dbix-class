@@ -1,5 +1,7 @@
 Revision history for DBIx::Class
 
+  2012-03-02 18:59:04
+
     * New Features / Changes
         - Issue a warning when DateTime objects are passed to ->search
         - Fast populate() in void context is now even more efficient by
@@ -23,6 +25,14 @@ Revision history for DBIx::Class
         - Fix leakage of $schema on in-memory new_related() calls
         - Remove useless vestigial pessimization in Ordered.pm for cases 
           when the position column is part of a unique constraint
+        - Loosen primary key requirement restriction on TEXT/IMAGE operations
+          for Sybase ASE to unique constraints
+        - Support TEXT/IMAGE UPDATE operations with TEXT queries in WHERE for
+          Sybase ASE
+        - Support BLOB/CLOB operations for Oracle with quoting enabled (by
+          switching to ora_auto_lob => 0)
+        - Support BLOB/CLOB operations for Oracle on DBD::Oracle version 1.23
+        - Support insert_bulk with BLOBs/CLOBs for Oracle
 
     * Misc
         - Codebase is now trailing-whitespace-free
