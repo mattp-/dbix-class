@@ -333,7 +333,7 @@ for my $slot (keys %$weak_registry) {
   elsif (
     $slot =~ /^\QData::Dumper/
       and
-    $weak_registry->{$slot}{strace} =~ /\QDBIx::Class::ResultSource::_mk_row_parser/
+    $weak_registry->{$slot}{strace} =~ /\QDBIx::Class::ResultSource::RowParser::_mk_row_parser/
   ) {
     # there should be only one D::D object (used to construct the rowparser)
     # more would indicate trouble
